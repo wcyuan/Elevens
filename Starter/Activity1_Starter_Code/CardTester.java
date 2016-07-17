@@ -11,5 +11,8 @@ public class CardTester {
 	 */
 	public static void main(String[] args) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+
+		Card six_of_hearts = new Card("six", "hearts", 6);
+		System.out.println("6H rank = " + six_of_hearts.rank());
 	}
 }
