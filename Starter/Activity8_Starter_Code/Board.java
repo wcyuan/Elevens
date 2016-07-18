@@ -1,6 +1,10 @@
 package Activity8_Starter_Code;
 
 import java.util.List;
+
+import Activity2_Starter_Code.Card;
+import Activity2_Starter_Code.Deck;
+
 import java.util.ArrayList;
 
 /**

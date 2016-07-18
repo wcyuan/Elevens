@@ -1,6 +1,10 @@
 package Activity7_Starter_Code;
 
 import java.util.List;
+
+import Activity2_Starter_Code.Card;
+import Activity2_Starter_Code.Deck;
+
 import java.util.ArrayList;
 
 /**
@@ -187,6 +191,7 @@ public class ElevensBoard {
 	 */
 	public boolean isLegal(List<Integer> selectedCards) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		return false;
 	}
 
 	/**
@@ -199,6 +204,7 @@ public class ElevensBoard {
 	 */
 	public boolean anotherPlayIsPossible() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		return false;
 	}
 
 
@@ -221,6 +227,7 @@ public class ElevensBoard {
 	 */
 	private boolean containsPairSum11(List<Integer> selectedCards) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		return false;
 	}
 
 	/**
@@ -233,5 +240,6 @@ public class ElevensBoard {
 	 */
 	private boolean containsJQK(List<Integer> selectedCards) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		return false;
 	}
 }
