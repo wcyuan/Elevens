@@ -33,6 +33,7 @@ public class Deck {
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		cards = new ArrayList<Card>();
 		for (size = 0; size < ranks.length && size < suits.length && size < values.length; size++)
 		{
 			cards.add(new Card(ranks[size], suits[size], values[size]));
@@ -74,7 +75,11 @@ public class Deck {
 	 */
 	public Card deal() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		return cards.get(size--);
+		if (size <= 0) {
+			return null;
+		}
+		size--;
+		return cards.get(size);
 	}
 
 	/**
