@@ -1,5 +1,3 @@
-package Activity5_Starter_Code.Buggy2;
-
 /**
  * Card.java
  *

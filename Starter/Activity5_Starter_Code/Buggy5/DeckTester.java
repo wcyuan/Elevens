@@ -1,5 +1,3 @@
-package Activity5_Starter_Code.Buggy5;
-
 /**
  * This is a class that tests the Deck class using assert statements.
  */
