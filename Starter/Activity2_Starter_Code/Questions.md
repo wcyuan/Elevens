@@ -23,20 +23,11 @@
   initializes a deck for a Twenty-One game.
 
  ```java
- ranks = { "ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king",
-          "ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king",
-          "ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king",
-          "ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king" };
+ ranks = { "ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king" };
 
- suits = { "spades", "spades", "spades", "spades", "spades", "spades", "spades", "spades", "spades", "spades", "spades", "spades", "spades", 
-          "hearts", "hearts", "hearts", "hearts", "hearts", "hearts", "hearts", "hearts", "hearts", "hearts", "hearts", "hearts", "hearts", 
-          "clubs", "clubs", "clubs", "clubs", "clubs", "clubs", "clubs", "clubs", "clubs", "clubs", "clubs", "clubs", "clubs", 
-          "diamonds", "diamonds", "diamonds", "diamonds", "diamonds", "diamonds", "diamonds", "diamonds", "diamonds", "diamonds", "diamonds", "diamonds", "diamonds" };
+ suits = { "spades", "hearts", "clubs", "diamonds" };
           
- pointValues = { 11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 
-                11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 
-                11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 
-                11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10 };
+ pointValues = { 11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10 };
 ```
 4. Does the order of elements of the ranks, suits, and pointValues arrays matter? 
   
