@@ -1,5 +1,16 @@
 /**
  * This is a class that tests the Deck class using assert statements.
+ * 
+ * 
+ * This is the error we get:
+ * 
+ * Exception in thread "main" java.lang.AssertionError: isEmpty is false for an empty deck.
+ * 	at DeckTester.testEmpty(DeckTester.java:109)
+ * 	at DeckTester.test1CardDeck(DeckTester.java:39)
+ * 	at DeckTester.main(DeckTester.java:23)
+ *
+ * This could mean that the deal method doesn't correctly decrement size.
+ *
  */
 public class DeckTester {
 

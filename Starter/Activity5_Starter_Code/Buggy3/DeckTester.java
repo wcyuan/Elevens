@@ -1,5 +1,12 @@
 /**
  * This is a class that tests the Deck class using assert statements.
+ *
+ * Exception in thread "main" java.lang.AssertionError: The sequence of cards in d1 and d2 are identical.
+ *	at DeckTester.testShuffle(DeckTester.java:147)
+ *	at DeckTester.main(DeckTester.java:21)
+ *	
+ * The problem could be that the constructor doesn't call shuffle, or that shuffle doesn't work.
+ * There is also a small chance that calling shuffle twice results in the same order, but that's unlikely.
  */
 public class DeckTester {
 

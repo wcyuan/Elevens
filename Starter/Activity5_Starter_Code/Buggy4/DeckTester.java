@@ -1,5 +1,15 @@
 /**
  * This is a class that tests the Deck class using assert statements.
+
+ * Exception in thread "main" java.lang.AssertionError: 1st dealt card is null for a 1-card deck.
+ *	at DeckTester.testOneCard(DeckTester.java:124)
+ *	at DeckTester.test1CardDeck(DeckTester.java:37)
+ *	at DeckTester.main(DeckTester.java:22)
+ *
+ * The problem could be that deal is broken and always returns null
+ * Or that shuffle doesn't set size properly.
+ *
+ *
  */
 public class DeckTester {
 

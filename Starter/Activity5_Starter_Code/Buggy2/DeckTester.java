@@ -1,5 +1,15 @@
 /**
  * This is a class that tests the Deck class using assert statements.
+ *
+ * Exception in thread "main" java.lang.AssertionError: Size is 0. It should be 1 for a 1-card deck.
+ *	at DeckTester.testOneCard(DeckTester.java:121)
+ *	at DeckTester.test1CardDeck(DeckTester.java:37)
+ *	at DeckTester.main(DeckTester.java:22)
+ *
+ * Possible that the constructor doesn't call shuffle or that
+ * shuffle doesn't set size.
+ *
+ *
  */
 public class DeckTester {
 
