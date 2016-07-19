@@ -54,5 +54,19 @@ public class DeckTester {
 		System.out.println();
 
 		/* *** TO BE COMPLETED IN ACTIVITY 4 *** */
+		Deck standard = new Deck(new String[] { "ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king",
+		          "ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king",
+		          "ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king",
+		          "ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king" },
+				new String[] { "spades", "spades", "spades", "spades", "spades", "spades", "spades", "spades", "spades", "spades", "spades", "spades", "spades", 
+				          "hearts", "hearts", "hearts", "hearts", "hearts", "hearts", "hearts", "hearts", "hearts", "hearts", "hearts", "hearts", "hearts", 
+				          "clubs", "clubs", "clubs", "clubs", "clubs", "clubs", "clubs", "clubs", "clubs", "clubs", "clubs", "clubs", "clubs", 
+				          "diamonds", "diamonds", "diamonds", "diamonds", "diamonds", "diamonds", "diamonds", "diamonds", "diamonds", "diamonds", "diamonds", "diamonds", "diamonds" }, 
+				new int[] { 11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 
+		                11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 
+		                11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 
+		                11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10 });
+		standard.shuffle();
+		System.out.println(standard);
 	}
 }
