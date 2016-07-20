@@ -16,3 +16,9 @@ Starter Code directory. Identify the abstract methods in Board.java. See how the
 methods are implemented in ElevensBoard. Do they cover all the differences between Elevens,
 Thirteens, and Tens as discussed in question 1? Why or why not?
 
+Yes, they seem to cover the differences.  For example, there is a method to
+detect whether another play is possible, which would be different for each
+game, and that is left for the subclass to decide how to do it.  On the other
+hand, once you have that, the logic for determining whether the game is won
+is the same for all the games, so that is implemented in Board.
+
