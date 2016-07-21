@@ -11,7 +11,7 @@ public class ThirteensBoard extends Board {
 	/**
 	 * The size (number of cards) on the board.
 	 */
-	private static final int BOARD_SIZE = 9;
+	private static final int BOARD_SIZE = 10;
 
 	/**
 	 * The ranks of the cards for this game to be sent to the deck.
@@ -29,7 +29,7 @@ public class ThirteensBoard extends Board {
 	 * The values of the cards for this game to be sent to the deck.
 	 */
 	private static final int[] POINT_VALUES =
-		{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 0, 0};
+		{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
 
 	/**
 	 * Flag used to control debugging print statements.
@@ -46,9 +46,8 @@ public class ThirteensBoard extends Board {
 
 	/**
 	 * Determines if the selected cards form a valid group for removal.
-	 * In Thirteens, the legal groups are (1) a pair of non-face cards
-	 * whose values add to 11, and (2) a group of three cards consisting of
-	 * a jack, a queen, and a king in some order.
+	 * In Thirteens, the legal groups are (1) a pair of cards
+	 * whose values add to 13, and (2) any king.
 	 * @param selectedCards the list of the indices of the selected cards.
 	 * @return true if the selected cards form a valid group for removal;
 	 *         false otherwise.
@@ -56,9 +55,9 @@ public class ThirteensBoard extends Board {
 	@Override
 	public boolean isLegal(List<Integer> selectedCards) {
 		if (selectedCards.size() == 2) {
-			return containsPairSum11(selectedCards);
-		} else if (selectedCards.size() == 3) {
-			return containsJQK(selectedCards);
+			return containsPairSum13(selectedCards);
+		} else if (selectedCards.size() == 1) {
+			return containsKing(selectedCards);
 		} else {
 			return false;
 		}
@@ -67,31 +66,30 @@ public class ThirteensBoard extends Board {
 	/**
 	 * Determine if there are any legal plays left on the board.
 	 * In Thirteens, there is a legal play if the board contains
-	 * (1) a pair of non-face cards whose values add to 11, or (2) a group
-	 * of three cards consisting of a jack, a queen, and a king in some order.
+	 * (1) a pair of cards whose values add to 13, or (2) a king 
 	 * @return true if there is a legal play left on the board;
 	 *         false otherwise.
 	 */
 	@Override
 	public boolean anotherPlayIsPossible() {
 		List<Integer> cIndexes = cardIndexes();
-		return containsPairSum11(cIndexes) || containsJQK(cIndexes);
+		return containsPairSum13(cIndexes) || containsKing(cIndexes);
 	}
 
 	/**
-	 * Check for an 11-pair in the selected cards.
+	 * Check for an 13-pair in the selected cards.
 	 * @param selectedCards selects a subset of this board.  It is list
 	 *                      of indexes into this board that are searched
-	 *                      to find an 11-pair.
+	 *                      to find an 13-pair.
 	 * @return true if the board entries in selectedCards
-	 *              contain an 11-pair; false otherwise.
+	 *              contain an 13-pair; false otherwise.
 	 */
-	private boolean containsPairSum11(List<Integer> selectedCards) {
+	private boolean containsPairSum13(List<Integer> selectedCards) {
 		for (int sk1 = 0; sk1 < selectedCards.size(); sk1++) {
 			int k1 = selectedCards.get(sk1).intValue();
 			for (int sk2 = sk1 + 1; sk2 < selectedCards.size(); sk2++) {
 				int k2 = selectedCards.get(sk2).intValue();
-				if (cardAt(k1).pointValue() + cardAt(k2).pointValue() == 11) {
+				if (cardAt(k1).pointValue() + cardAt(k2).pointValue() == 13) {
 					return true;
 				}
 			}
@@ -100,27 +98,20 @@ public class ThirteensBoard extends Board {
 	}
 
 	/**
-	 * Check for a JQK in the selected cards.
+	 * Check for a King in the selected cards.
 	 * @param selectedCards selects a subset of this board.  It is list
 	 *                      of indexes into this board that are searched
-	 *                      to find a JQK group.
+	 *                      to find a King.
 	 * @return true if the board entries in selectedCards
-	 *              include a jack, a queen, and a king; false otherwise.
+	 *              include a king; false otherwise.
 	 */
-	private boolean containsJQK(List<Integer> selectedCards) {
-		boolean foundJack = false;
-		boolean foundQueen = false;
-		boolean foundKing = false;
+	private boolean containsKing(List<Integer> selectedCards) {
 		for (Integer kObj : selectedCards) {
 			int k = kObj.intValue();
-			if (cardAt(k).rank().equals("jack")) {
-				foundJack = true;
-			} else if (cardAt(k).rank().equals("queen")) {
-				foundQueen = true;
-			} else if (cardAt(k).rank().equals("king")) {
-				foundKing = true;
+			if (cardAt(k).rank().equals("king")) {
+				return true;
 			}
 		}
-		return foundJack && foundQueen && foundKing;
+		return false;
 	}
 }
